@@ -21,7 +21,6 @@ from config.config import FLAGS
 
 def main(args):
     if args.isShow or args.isTexture:
-        import cv2
         from utils.cv_plot import plot_kpt, plot_vertices, plot_pose_box
 
     # ---- transform
@@ -151,7 +150,7 @@ if __name__ == '__main__':
                         help='whether to output key points(.txt)')
     parser.add_argument('--isPose', default=False, type=ast.literal_eval,
                         help='whether to output estimated pose(.txt)')
-    parser.add_argument('--isShow', default=True, type=ast.literal_eval,
+    parser.add_argument('--isShow', default=False, type=ast.literal_eval,
                         help='whether to show the results with opencv(need opencv)')
     parser.add_argument('--isImage', default=False, type=ast.literal_eval,
                         help='whether to save input image')
